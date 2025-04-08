@@ -1,0 +1,27 @@
+{
+    "name": "React Dev Container",
+    "image": "mcr.microsoft.com/devcontainers/universal:2-linux", 
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "dsznajder.es7-react-js-snippets",
+        "formulahendry.auto-close-tag",
+        "ecmel.vscode-html-css",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "xabikos.ReactSnippets",
+       "PulkitGangwar.nextjs-snippets",
+       "esbenp.prettier-vscode",
+       "rvest.vs-code-prettier-eslint",
+         
+        ],
+        "settings": {
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.tabSize": 2
+        }
+      }
+    },
+    "postCreateCommand": "npm install"
+  }
