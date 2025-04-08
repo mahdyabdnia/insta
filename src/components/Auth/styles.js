@@ -103,6 +103,24 @@ input_tag:{
     }
 
 
+},
+
+button:{
+    display:'flex',
+    flexDirection: ' row',
+    alignItems : 'center',
+    justifyContent : 'center',
+    borderRadius:' 5px ', 
+    color:'white',
+    fontSize:'15px',
+    border:'none',
+    backgroundColor:'greenyellow',
+    boxShadow:'0px 0px 4px 1px greenyellow',
+    boxSizing:'border-box',
+    padding:'1vmax 1vmax',
+    width:'50%',
+    margin:'auto',
+    fontWeight:'bolder'
 }
 })
 

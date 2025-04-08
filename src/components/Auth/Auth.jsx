@@ -1,9 +1,11 @@
 import React,{useRef} from 'react'
 import useStyles from './styles'
+import { useNavigate } from 'react-router-dom'
 export default function Auth() {
     const classes=useStyles()
     const lgRef=useRef(null)
     const rgRef=useRef(null)
+    const naviage=useNavigate()
     const goToRegisterForm=()=>{
     const reg=rgRef.current;
     const lg=lgRef.current;
@@ -42,6 +44,8 @@ export default function Auth() {
             <input type="password" className={classes.input_tag} />
             </div>
         </div>
+
+        <button className={classes.button} onClick={()=>{naviage('/')}}> ورود</button>
         
         
 
@@ -52,7 +56,7 @@ export default function Auth() {
 
 <div className={classes.main_box_rg} ref={rgRef}>
        
-<h2>ورود </h2>
+<h2>ثبت نام </h2>
 <div className={classes.form_box}>
 
 <label htmlFor="" className={classes.label_form}> پست الکترونیکی  </label>
@@ -71,6 +75,7 @@ export default function Auth() {
     <span></span>
     <input type="password" className={classes.input_tag} />
     </div>
+    <button className={classes.button}>ثبت ‌نام</button>
 </div>
 
 
