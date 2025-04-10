@@ -7,6 +7,8 @@ export default function MainBox() {
     <div className={classes.main_root}>
       
       <PostCard/>
+      <PostCard/>
+      <PostCard/>
     </div>
   )
 }

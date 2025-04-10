@@ -1,4 +1,4 @@
-import React,{useRef} from 'react'
+import React,{useRef,useEffect} from 'react'
 import useStyles from './styles'
 import {Close} from './../Consts/Icons'
 import classnames from 'classnames'
@@ -10,6 +10,31 @@ export default function Modal({children,className}){
               modalRef.current.style.display="none"
         }
     }
+     useEffect(() => {
+              const closeModal=()=>{
+          if(modalRef.current){
+            modalRef.current.style.display="none"
+          }
+          }
+            if(modalRef.current
+            ){
+                 modalRef.current.addEventListener('click', (e) => {
+                  if (e.target === e.currentTarget) { // فقط اگر روی خود بکدراپ کلیک شده
+                    closeModal();
+                  }
+                })
+            }
+          
+            return () => {
+                if(modalRef.current){
+                 modalRef.current.removeEventListener('click', (e) => {
+                  if (e.target === e.currentTarget) { // فقط اگر روی خود بکدراپ کلیک شده
+                    closeModal();
+                  }
+                })
+            }
+            }
+          }, [ ])
     return(
         <div className={classnames(classes.modal_root,className)} ref={modalRef}>
         <button className={classes.close_btn} onClick={closeModal}>

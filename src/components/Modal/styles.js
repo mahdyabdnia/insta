@@ -1,7 +1,7 @@
 import {makeStyles} from '@mui/styles'
 const useStyles=makeStyles({
 modal_root:{
-    display:'flex',
+    display:'none',
     flexDirection:'column',
     alignItems:'center',
     justifyContent:'center',
