@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react'
 import useStyles from './styles'
-import MoviePlayer from '../../../../MoviePlayer/MoviePlayer';
+import MoviePlayer from '../../../MoviePlayer/MoviePlayer';
 import { Divider } from '@mui/material';
-import { Comment, LikeOff, LikeOn, MoreHorz, Save } from '../../../../Consts/Icons';
+import { Comment, LikeOff, LikeOn, MoreHorz, Save } from '../../../Consts/Icons';
 import classnames from 'classnames'
 import { Smile } from 'react-feather';
-import ManagePostModal from '../../ManagePostModal/ManagePostModal';
+import ManagePostModal from '../../../Home/MainBox/ManagePostModal/ManagePostModal';
 export default function PostModal() {
   const classes=useStyles();
   const [text, settext] = useState(' افزودن نظر')

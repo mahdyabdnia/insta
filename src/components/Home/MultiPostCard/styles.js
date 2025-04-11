@@ -2,7 +2,7 @@ import { makeStyles } from "@mui/styles";
 
 const useStyles=makeStyles({
 root:{
-    display:'flex',
+    display:'flex', 
     flexDirection:'column',
     boxSizing:'border-box',
     padding:'1vh 2vmax',
@@ -49,17 +49,70 @@ user_info:{
     fontWeight:'bolder',
     color:'rgba(0,0,0,0.7)'
 },
-post_body:{
+carousel_container:{
     backgroundColor:'black',
     borderRadius:'3px',
     boxSizing:'border-box',
     display:'flex',
-    flexDirection:'column',
+    flexDirection:'row',
     alignItems:'center',
     justifyContent:'center',
     minHeight:'400px',
+    position:'relative',
+    overflow:'hidden'
+
 
 },
+carousel:{
+transition:' transform 0.3s ease-in-out',
+display:'flex'
+},
+carousel_item:{
+display:'flex',
+flexDirection:'row',
+alignItems:'center',
+justifyContent:'center',
+boxSizing:'border-box',
+width:'100%',
+minWidth:'100%',
+height:'100%'
+},
+carousel_dots:{
+position:'absolute',
+ bottom: '10px',
+  left: '50%',
+  transform: 'translateX(-50%)',
+  display: 'flex',
+  gap: '5px',
+},
+carousel_dot:{
+    width: '10px',
+    height: '10px',
+    borderRadius: '50%',
+    background: 'rgba(255,255,255,0.5)',
+    border: 'none',
+    cursor: 'pointer',
+},
+arrow_btn:{display:'flex',
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'center',
+    cursor:'pointer',
+    width:'25px',
+    borderRadius:'50%',
+    aspectRatio:'1/1',
+    backgroundColor:'grey',
+    position:'absolute',
+    color:'white',
+    border:'none',
+    zIndex:'20000',},
+   left_ar:{
+       left:'10px'
+
+    },
+    right_ar:{
+        right:'10px !important'
+    },
 buttons:{
 display:'flex',
 flexDirection:'row',

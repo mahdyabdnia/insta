@@ -2,13 +2,15 @@ import React,{useState} from 'react'
 import useStyles from './styles'
 import {  LinkOff, MoreHoriz, } from '@mui/icons-material';
 import { Share,MessageCircle } from 'react-feather';
-import { LikeOff, Save ,LikeOn} from '../../../Consts/Icons';
+import { LikeOff, Save ,LikeOn} from '../../Consts/Icons';
+
+ import Modal from '../../Modal/Modal'
+ import MoviePlayer from '../../MoviePlayer/MoviePlayer';
+import PostModal from './PostModal/PostModal'; 
+import { LeftArrow, RightArrow } from '../../Consts/Icons';
 import classnames from 'classnames'
-import MoviePlayer from '../../../MoviePlayer/MoviePlayer';
-import Modal from '../../../Modal/Modal'
-import PostModal from './PostModal/PostModal';
  
-export default function PostCard() {
+export default function MultiPostCard() {
     const classes=useStyles();
     const [like, setLike] = useState(true)
     const [saved,setSaved]=useState(false)
@@ -30,9 +32,27 @@ export default function PostCard() {
                 <MoreHoriz/>
             </div>
         </div>
+        
+        <div className={classes.carousel_container}> 
+            <button className={classnames(classes.arrow_btn,classes.left_ar)}><LeftArrow/></button>
+            <button className={classnames(classes.arrow_btn,classes.right_ar)}><RightArrow/></button>
+             <div className={classes.carousel}>
 
-        <div className={classes.post_body}>
-            <MoviePlayer/>
+                <div className={classes.carousel_item}><MoviePlayer/></div>
+
+                <div className={classes.carousel_item}><MoviePlayer/></div>
+
+                <div className={classes.carousel_item}><MoviePlayer/></div>
+                <div className={classes.carousel_item}><MoviePlayer/></div>
+                <div className={classes.carousel_item}><MoviePlayer/></div>
+                <div className={classes.carousel_dots}>
+                    <span className={classes.carousel_dot}></span>
+                    <span className={classes.carousel_dot}></span>
+                    <span className={classes.carousel_dot}></span>
+                    <span className={classes.carousel_dot}></span>
+                    <span className={classes.carousel_dot}></span>
+                </div>
+             </div>
         </div>
         <div className={classes.buttons}> 
             <div className={classes.left}>

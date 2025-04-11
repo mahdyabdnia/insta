@@ -1,6 +1,7 @@
 import React from 'react'
 import useStyles from './styles'
 import PostCard from './PostCard/PostCard'
+import MultiPostCard from '../MultiPostCard/MultiPostCard'
 export default function MainBox() {
   const classes=useStyles()
   return (
@@ -9,6 +10,7 @@ export default function MainBox() {
       <PostCard/>
       <PostCard/>
       <PostCard/>
+      <MultiPostCard/>
     </div>
   )
 }

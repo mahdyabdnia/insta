@@ -4,8 +4,8 @@ import {  LinkOff, MoreHoriz, } from '@mui/icons-material';
 import { Share,MessageCircle } from 'react-feather';
 import { LikeOff, Save ,LikeOn} from '../../../Consts/Icons';
 import classnames from 'classnames'
-import MoviePlayer from '../../../MoviePlayer/MoviePlayer';
-import Modal from '../../../Modal/Modal'
+  import Modal from '../../../Modal/Modal'
+  import MoviePlayer from '../../../MoviePlayer/MoviePlayer';
 import PostModal from './PostModal/PostModal';
  
 export default function PostCard() {
@@ -20,7 +20,8 @@ export default function PostCard() {
     <div className={classnames(classes.root,)}>
     <Modal className='modal'>
      <PostModal/>
-    </Modal>
+     </Modal>
+     
         <div className={classes.info_ctr_box}>
             <div className={classes.info_box}>
                 <div className={classes.avatar}></div>
