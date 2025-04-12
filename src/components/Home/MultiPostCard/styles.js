@@ -60,6 +60,9 @@ carousel_container:{
     minHeight:'400px',
     position:'relative',
     overflow:'hidden'
+    
+    
+   
 
 
 },
@@ -67,15 +70,30 @@ carousel:{
 transition:' transform 0.3s ease-in-out',
 display:'flex'
 },
+hidden:{
+display:'none !important'
+},
+active_carousel:{
+display:'flex'
+},
+
+
 carousel_item:{
 display:'flex',
 flexDirection:'row',
 alignItems:'center',
 justifyContent:'center',
 boxSizing:'border-box',
-width:'100%',
+ 
 minWidth:'100%',
-height:'100%'
+height:'100%',
+width:'100%'
+
+},
+active:{ backgroundColor: '#000 !important',
+  transform: 'scale(1.2)'
+
+
 },
 carousel_dots:{
 position:'absolute',
@@ -105,7 +123,7 @@ arrow_btn:{display:'flex',
     position:'absolute',
     color:'white',
     border:'none',
-    zIndex:'20000',},
+    zIndex:'20',},
    left_ar:{
        left:'10px'
 

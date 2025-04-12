@@ -4,7 +4,7 @@ import { PauseCircle, PlayCircle } from 'react-feather'
 import { MuteIcon, Pause, VolumeIcon } from '../Consts/Icons'
 import classnames from 'classnames'
 
-export default function MoviePlayer() {
+export default function MoviePlayer({src,active}) {
     const classes=useStyles()
     const vidRef=useRef(null)
     const playRef=useRef(null)
@@ -23,7 +23,24 @@ export default function MoviePlayer() {
       }
     }, [vidRef.current])
     
-
+     useEffect(() => {
+       if(!active && vidRef.current){
+        vidRef.current.pause()
+        vidRef.current.currentTime="0"
+        setPlayState(0)
+       }
+     
+       return () => {
+        
+       }
+     }, [active])
+     useEffect(() => {
+      if (vidRef.current) {
+        vidRef.current.pause();
+        setPlayState(0)
+        vidRef.current.currentTime = 0;
+      }
+    }, [src]);
     useEffect(() => {
       const playMovie = () => {
         if (vidRef.current) {
@@ -102,7 +119,7 @@ export default function MoviePlayer() {
   return (
     <div className={classes.player_root}>
        <video   played={true} className={classes.video} ref={vidRef} >
-       <source src="/media/ac.mp4" type="video/mp4"/>
+       <source src={src || "/media/ac.mp4"} type="video/mp4"/>
         </video>
         <button className={classnames(classes.btn,classes.play_btn)} ref={playRef}>  
          {playState===0 && <PlayCircle/>} 

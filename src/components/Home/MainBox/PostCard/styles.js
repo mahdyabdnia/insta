@@ -29,7 +29,8 @@ ctr_box:{
     display:'flex',
     flexDirection:'row',
     alignItems:'center',
-    justifyContent:'flex-end'
+    justifyContent:'flex-end',
+    cursor:'pointer'
 },
 avatar:{
     display:'flex',

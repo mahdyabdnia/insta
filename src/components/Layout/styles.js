@@ -14,10 +14,14 @@ left:{
     width:'30%'
 },
 right:{
-    width:'20%'
+    width:'20%',
+    position:'fixed',
+    right:'0',
+
 },
 main:{
-    width:'50%'
+    width:'50%',
+    marginRight:'20%'
 }
 })
 

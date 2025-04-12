@@ -7,7 +7,7 @@ export default function MainBox() {
   return (
     <div className={classes.main_root}>
       
-      <PostCard/>
+      <PostCard src= "/media/c.mp4"/>
       <PostCard/>
       <PostCard/>
       <MultiPostCard/>

@@ -7,6 +7,10 @@ nav_root:{
     height:'100vh',
     boxSizing:'border-box',
     padding:'1vmax 1vmax',
+     
+    alignItems:'flex-start',
+   
+     
  
      
     borderLeft:'1px groove rgba(0,0,0,0.5)'
