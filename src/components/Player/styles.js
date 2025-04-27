@@ -25,7 +25,7 @@ btn:{
     }
 },
 play_btn:{
-zIndex:'29',
+zIndex:'10',
 transform:'translate(50%,50%)',
 position:'absolute'
 
@@ -40,6 +40,11 @@ width:'100%',
 objectFit:'contain',
 height:'auto',
 margin:'auto'
+},
+img:{
+objectFit:'contain',
+width:'100%'
+
 }
 })
 

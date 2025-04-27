@@ -1,13 +1,13 @@
 import React from 'react'
 import useStyles from './styles'
-import StoryBox from './StoryBox/StoryBox';
-import MainBox from './MainBox/MainBox';
+import PostCard from '../PostCard/PostCard'
 export default function Home() {
   const classes=useStyles();
   return (
     <div className={classes.root}>
-     <StoryBox/>
-     <MainBox/>
+     <PostCard src={'images/unnamed.jpg'}/>
+      <PostCard src={'media/ac.mp4'}/>
+ 
     </div>
   )
 }

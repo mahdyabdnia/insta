@@ -2,7 +2,7 @@ import React,{useRef,useEffect} from 'react'
 import useStyles from './styles'
 import {Close} from './../Consts/Icons'
 import classnames from 'classnames'
-export default function Modal({children,className}){
+export default function Modal({children,open}){
     const classes=useStyles();
     const modalRef=useRef(null)
     const closeModal=()=>{
@@ -35,8 +35,20 @@ export default function Modal({children,className}){
             }
             }
           }, [ ])
+
+          useEffect(() => {
+             if(modalRef.current){
+            
+              modalRef.current.style.display==='flex'}
+            
+          
+            return () => {
+            
+            }
+          }, [open])
+          
     return(
-        <div className={classnames(classes.modal_root,className)} ref={modalRef}>
+        <div className={classnames(classes.modal_root)} ref={modalRef}>
         <button className={classes.close_btn} onClick={closeModal}>
             <Close/>
         </button>

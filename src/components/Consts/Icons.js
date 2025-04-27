@@ -219,7 +219,7 @@ export function MorePoint({className}){
 }
 
 
-export function LikeOff({className}){
+export function LikeOff({className,like}){
 
   return(
     <>

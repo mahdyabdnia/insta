@@ -9,8 +9,52 @@ export default function MoviePlayer({src,active}) {
     const vidRef=useRef(null)
     const playRef=useRef(null)
     const [playState, setPlayState] = useState(0)
-    const [muteState, setMuteState] = useState(1)
+    const [muteState, setMuteState] = useState(1) 
+    const [type,setType] = useState('')
     const muteRef=useRef(null)
+    const checkMediaType=(src)=> {
+            // لیست پسوندهای تصاویر
+            const imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+            // لیست پسوندهای ویدیوها
+            const videoExtensions = ['mp4', 'mov', 'avi', 'mkv', 'flv', 'wmv'];
+        
+            // حذف بخش کوئری از URL (اگر وجود داشته باشد)
+            const base = src.split('?')[0];
+            // استخراج پسوند فایل
+            const parts = base.split('.');
+            
+            if (parts.length < 2) return 'unknown';
+            
+            const extension = parts.pop().toLowerCase();
+        
+            if (imageExtensions.includes(extension)) {
+                return 'image';
+            } else if (videoExtensions.includes(extension)) {
+                return 'video';
+            } else {
+                return 'unknown';
+            }
+        }
+    
+     
+        
+    
+        useEffect(() => {
+           if(checkMediaType(src)==='image'){
+            setType('image')
+           }
+           else if(checkMediaType(src)==='video'){
+                setType('video')
+           }
+           else{
+            setType('unknown');
+           }
+        
+          return () => {
+             
+          }
+        }, [ src])
+        
     useEffect(() => {
        if(vidRef.current){
        if(vidRef.current.played===true){
@@ -118,6 +162,8 @@ export default function MoviePlayer({src,active}) {
     
   return (
     <div className={classes.player_root}>
+    {type==='video' &&
+    <>
        <video   played={true} className={classes.video} ref={vidRef} >
        <source src={src || "/media/ac.mp4"} type="video/mp4"/>
         </video>
@@ -132,7 +178,12 @@ export default function MoviePlayer({src,active}) {
         
           {muteState===1 &&   <VolumeIcon/> }
           
-          </button>
+          </button> </> }
+
+          {type ==='image' &&
+          <img  src={src} className={classes.img}/>
+           
+          }
     </div>
   )
 }
